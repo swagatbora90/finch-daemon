@@ -61,7 +61,6 @@ func New(opts *Options) http.Handler {
 	builder.RegisterHandlers(vr, opts.BuilderService, opts.Config, logger, opts.NerdctlWrapper)
 	volume.RegisterHandlers(vr, opts.VolumeService, opts.Config, logger)
 	exec.RegisterHandlers(vr, opts.ExecService, opts.Config, logger)
-	distribution.RegisterHandlers(vr, opts.DistributionService, opts.Config, logger)
 	return ghandlers.LoggingHandler(os.Stderr, r)
 }
 
